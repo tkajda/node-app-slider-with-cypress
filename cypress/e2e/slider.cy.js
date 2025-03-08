@@ -16,3 +16,15 @@ describe('Swiper Gallery Test', function () {
     cy.get('.swiper-slide-active').should('contain', 'Paris');
   });
 });
+
+describe('Swiper Gallery Test', function () {
+  it('Checks if slider goes in circle"', function () {
+    cy.visit('http://localhost:3000');
+    cy.get('.swiper-button-next').click();
+    cy.wait(500);
+    cy.get('.swiper-button-next').click({ force: true });
+    cy.wait(500);
+    cy.get('.swiper-button-next').click({ force: true });
+    cy.get('.swiper-slide-active').should('contain', 'Rome');
+  });
+});
